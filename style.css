@@ -1,0 +1,96 @@
+#l{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+a{
+    text-decoration: none;
+    cursor: pointer;
+}
+.caption {
+    background: rgba(200, 200, 200, 0.3) !important;
+    border-radius: 7px !important;
+}
+body{
+    background-color: grey;
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+.fixed1{
+    width: 100%;
+    height: 250px;
+    background-image:url(../images/3.jpg);
+    background-attachment: fixed;
+    position: relative;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+.fixed1::after , .fixed2::after{
+    content: "";
+    background-color: rgba(0, 0, 0, 0.627);
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+}
+.fixed2{
+    width: 100%;
+    height: 250px;
+    background-image:url(../images/work1.jpg);
+    background-attachment: fixed;
+    position: relative;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+.copyBtn{
+    position: relative;
+    margin-bottom: 10px;
+}
+.copyBtn::after{
+    content: '';
+    position: absolute;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent rgb(13,202,240) transparent;
+    bottom: -38%;
+    width: 10px;
+    height: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: .4s;
+    text-shadow: 2px 2px 2px #000;
+}
+.copyBtn:hover::after ,.copyBtn:hover::before {
+    opacity: 1;
+    transition: .4s;
+
+}
+.copyBtn::before{
+    position: absolute;
+    content: "Copy to clipboard";
+    width: 100px;
+    height: 45px;
+    border-radius: 10px;
+    background-color: rgb(13,202,240);
+    color: #fff;
+    bottom: calc(-38% - 45px);
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: .4s;
+}
+code{
+    font-size: 1.2rem;
+}
+.copyBtn:active::before{
+    content: "Copy";
+    bottom: calc(-38% - 25px);
+    height: 25px;
+    /* transition: 0s; */
+}
+.carousel-indicators{
+
+} 
